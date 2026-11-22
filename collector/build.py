@@ -77,6 +77,17 @@ def region_file(region, primary, result, report, previous, now):
     }
 
 
+def changed_queues(previous, doc):
+    """The queues whose schedule differs from the previous file on any day of the new one (a day that was not there
+    before, e.g. tomorrow just published, counts). Nothing for a region without a previous file: the first run must
+    not wake everybody."""
+    if not previous:
+        return []
+    old, new = previous.get("days") or {}, doc.get("days") or {}
+    return [q for q in doc.get("queues", [])
+            if any(old.get(day, {}).get(q) != states[q] for day, states in new.items() if q in states)]
+
+
 def load_json(path):
     try:
         with open(path, encoding="utf-8") as f:
@@ -92,9 +103,10 @@ def dump(path, doc):
         f.write("\n")
 
 
-def run(out_dir: str, site_dir: str = None, fetcher=sources.fetch, now: datetime = None) -> int:
+def run(out_dir: str, site_dir: str = None, fetcher=sources.fetch, now: datetime = None, changes: dict = None) -> int:
     """Writes out_dir/regions/<slug>.json and out_dir/index.json (no clock in them: they change only with the
     schedules, so they can be committed). With site_dir, the same files with "checkedAt" go there (to be published).
+    With a dict as "changes", it gets {region: [queues whose schedule changed]}.
     Returns the number of regions that are not served for today."""
     now = now or datetime.now(timezone.utc)
     today = sources.today_kyiv(now).isoformat()
@@ -112,6 +124,8 @@ def run(out_dir: str, site_dir: str = None, fetcher=sources.fetch, now: datetime
             failing += 0 if served else 1
         else:
             doc = region_file(region, primary, result, report, previous, now)
+            if changes is not None and changed_queues(previous, doc):
+                changes[region.slug] = changed_queues(previous, doc)
         dump(path, doc)
         index.append({"region": region.slug, "name": {"uk": region.name_uk, "en": region.name_en},
                       "source": doc.get("source"), "updatedAt": doc.get("updatedAt"),

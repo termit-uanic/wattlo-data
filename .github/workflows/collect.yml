@@ -29,7 +29,7 @@ jobs:
       - name: Collect
         id: collect
         continue-on-error: true  # the files of the regions that do work are still published
-        run: python -m collector data/v1 --site _site/v1
+        run: python -m collector data/v1 --site _site/v1 --changes /tmp/changes.json
 
       - name: Commit the schedules if they changed
         run: |
@@ -87,6 +87,13 @@ jobs:
           print(json.dumps({"files": files}))
           PY
           purge "$(cat /tmp/purge.json)"
+
+      # Tell the apps what changed. Skipped without the secret; a failure here does not fail the run.
+      - name: Notify
+        continue-on-error: true
+        env:
+          FCM_SERVICE_ACCOUNT: ${{ secrets.FCM_SERVICE_ACCOUNT }}
+        run: python -m collector.push /tmp/changes.json
 
       - name: Fail if a region is not served
         if: steps.collect.outcome == 'failure'
