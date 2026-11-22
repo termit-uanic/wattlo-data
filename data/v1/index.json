@@ -21,9 +21,10 @@
     "en": "Kharkiv region"
    },
    "source": "bezsvitla",
-   "updatedAt": "2026-11-22T15:59:18Z",
+   "updatedAt": "2026-11-22T21:14:34Z",
    "days": [
-    "2026-11-22"
+    "2026-11-22",
+    "2026-11-23"
    ]
   },
   {
@@ -58,7 +59,7 @@
     "en": "Kyiv region"
    },
    "source": "dtek_data",
-   "updatedAt": "2026-11-22T20:35:36Z",
+   "updatedAt": "2026-11-22T21:14:34Z",
    "days": [
     "2026-11-22",
     "2026-11-23"
@@ -134,7 +135,7 @@
     "en": "Kirovohrad region"
    },
    "source": "bezsvitla",
-   "updatedAt": "2026-11-22T15:59:18Z",
+   "updatedAt": "2026-11-22T21:14:34Z",
    "days": [
     "2026-11-22"
    ]
