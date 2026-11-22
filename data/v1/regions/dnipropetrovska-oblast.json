@@ -19,27 +19,27 @@
   "6.1",
   "6.2"
  ],
- "source": "bezsvitla",
+ "source": "yasno",
  "sources": [
   {
    "id": "yasno",
    "name": "yasno.ua",
    "url": "https://yasno.ua/",
-   "ok": false,
-   "error": "no schedule of today for most queues"
+   "ok": true
   },
   {
    "id": "dtek_data",
    "name": "outage-data-ua (GitHub)",
    "url": "https://github.com/Baskerville42/outage-data-ua",
-   "ok": false,
-   "error": "no schedule of today for most queues"
+   "ok": true,
+   "agreement": 1.0
   },
   {
    "id": "bezsvitla",
    "name": "bezsvitla.com.ua",
    "url": "https://bezsvitla.com.ua/",
-   "ok": true
+   "ok": true,
+   "agreement": 1.0
   }
  ],
  "days": {
