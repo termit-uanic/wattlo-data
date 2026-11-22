@@ -32,7 +32,7 @@ class Region:
 BZ = "bezsvitla"
 
 REGIONS = [
-    Region("poltavska-oblast", "Полтавська область", "Poltava region", TWELVE, (BZ, "oe_data"), data_file="Poltavaoblenergo.json"),
+    Region("poltavska-oblast", "Полтавська область", "Poltava region", TWELVE, ("oe_data", BZ), data_file="Poltavaoblenergo.json"),  # the file has the half hours of switching, as poe.pl.ua does
     Region("kharkivska-oblast", "Харківська область", "Kharkiv region", TWELVE, (BZ, "oe_data"), data_file="Kharkivoblenerho.json"),
     Region("dnipropetrovska-oblast", "Дніпропетровська область", "Dnipropetrovsk region", TWELVE,
            ("yasno", "dtek_data", BZ), yasno=(3, 301), data_file="dnipro.json"),
