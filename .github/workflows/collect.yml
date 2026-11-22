@@ -1,0 +1,95 @@
+# Every 7 minutes: collect the schedules, commit them when they change, and publish the files.
+name: collect
+on:
+  schedule:
+    - cron: "2,9,16,23,30,37,44,51,58 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: collect
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url || steps.deploy_retry.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+
+      - name: Collect
+        id: collect
+        continue-on-error: true  # the files of the regions that do work are still published
+        run: python -m collector data/v1 --site _site/v1
+
+      - name: Commit the schedules if they changed
+        run: |
+          git config user.name "wattlo-data"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data
+          if git diff --cached --quiet; then
+            echo "nothing changed"
+          else
+            git commit -m "Schedules changed $(date -u +%Y-%m-%dT%H:%MZ)"
+            git push
+          fi
+
+      - name: Pages
+        run: |
+          cp site/index.html _site/index.html
+          touch _site/.nojekyll
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: _site
+      # GitHub sometimes does not list the artifact it has just stored ("Found 0 artifact(s)"): the deployment is tried again
+      - id: deploy
+        uses: actions/deploy-pages@v5
+        continue-on-error: true
+      - name: Wait before the second try
+        if: steps.deploy.outcome == 'failure'
+        run: sleep 30
+      - id: deploy_retry
+        if: steps.deploy.outcome == 'failure'
+        uses: actions/deploy-pages@v5
+
+      # Drop the cached copies of the published files, so that they are never older than one run.
+      # Skipped without the two secrets; a failure here does not fail the run.
+      - name: Refresh the cache
+        continue-on-error: true
+        env:
+          CDN_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CDN_ZONE: ${{ secrets.CLOUDFLARE_ZONE_ID }}
+        run: |
+          if [ -z "$CDN_TOKEN" ] || [ -z "$CDN_ZONE" ]; then echo "no secrets: nothing to do"; exit 0; fi
+          sleep 15  # let the new deployment settle first
+          purge() { # a JSON body; prints the answer and succeeds if the service says so
+            curl -sS --retry 3 --retry-delay 5 -X POST "https://api.cloudflare.com/client/v4/zones/$CDN_ZONE/purge_cache" \
+              -H "Authorization: Bearer $CDN_TOKEN" -H "Content-Type: application/json" --data "$1" | tee /tmp/purge.out
+            echo
+            python3 -c 'import json,sys; sys.exit(0 if json.load(open("/tmp/purge.out")).get("success") else 1)'
+          }
+          if purge '{"hosts":["wattlo.poltorak.family"]}'; then echo "done"; exit 0; fi
+          echo "by host did not work, listing the addresses"
+          python3 - > /tmp/purge.json <<'PY'
+          import json
+          base = "https://wattlo.poltorak.family"
+          files = [base + "/", base + "/v1/index.json"]
+          files += [base + "/v1/regions/" + r["region"] + ".json" for r in json.load(open("_site/v1/index.json"))["regions"]]
+          print(json.dumps({"files": files}))
+          PY
+          purge "$(cat /tmp/purge.json)"
+
+      - name: Fail if a region is not served
+        if: steps.collect.outcome == 'failure'
+        run: |
+          echo "A region has no schedule of today from any source (see the Collect step)" >&2
+          exit 1

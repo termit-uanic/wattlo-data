@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>wattlo-data: графіки відключень</title>
+<style>
+  :root { --bg:#fff; --fg:#1b1f24; --muted:#5b6470; --card:#f3f5f7; --line:#d9dee3; --on:#bfe8cd; --off:#e5484d; --maybe:#f2b13c; --accent:#12803f; --now:#1b1f24; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#0e1013; --fg:#e8eaed; --muted:#9aa3ad; --card:#181b20; --line:#2a2f36; --on:#1f5a38; --off:#ff5a5f; --maybe:#ffc14d; --accent:#4ade80; --now:#e8eaed; } }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--fg); font:15px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; }
+  main { max-width:980px; margin:0 auto; padding:20px 16px 64px; }
+  h1 { font-size:1.4rem; margin:0 0 4px; }
+  h2 { font-size:1.05rem; margin:28px 0 8px; }
+  a { color:var(--accent); }
+  .muted { color:var(--muted); }
+  .bar { display:flex; gap:10px; flex-wrap:wrap; align-items:center; margin:14px 0 6px; }
+  select, input { font:inherit; color:var(--fg); background:var(--card); border:1px solid var(--line); border-radius:10px; padding:8px 12px; }
+  select { min-width:240px; }
+  .note { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:10px 14px; margin:10px 0; }
+  .warn { border-color:var(--maybe); }
+  .chips { display:flex; gap:8px; flex-wrap:wrap; margin:6px 0 0; }
+  .chip { border:1px solid var(--line); border-radius:999px; padding:2px 10px; font-size:.85rem; }
+  .chip.ok { border-color:var(--accent); } .chip.fail { border-color:var(--off); color:var(--off); }
+  .chip.used { background:var(--card); font-weight:600; }
+  .rows { display:grid; grid-template-columns: 4.2rem 1fr; gap:6px 10px; align-items:center; }
+  .q { font-weight:600; text-align:right; font-variant-numeric:tabular-nums; }
+  .q i { display:inline-block; width:.6rem; height:.6rem; border-radius:50%; margin-right:6px; background:var(--on); }
+  .q i.off { background:var(--off); } .q i.maybe { background:var(--maybe); }
+  .track { position:relative; }
+  .cells { display:grid; grid-template-columns:repeat(48,1fr); height:20px; border-radius:6px; overflow:hidden; background:var(--on); }
+  .cells span { background:transparent; } .cells span.o { background:var(--off); } .cells span.m { background:var(--maybe); }
+  .now { position:absolute; top:-3px; bottom:-3px; width:2px; background:var(--now); border-radius:1px; }
+  .ranges { font-size:.8rem; color:var(--muted); margin-top:2px; min-height:1.1em; }
+  .ticks { display:grid; grid-template-columns:repeat(8,1fr); font-size:.72rem; color:var(--muted); margin:0 0 4px 0; }
+  .head { display:grid; grid-template-columns: 4.2rem 1fr; gap:10px; }
+  footer { margin-top:36px; font-size:.85rem; }
+  @media (max-width:560px) { .rows, .head { grid-template-columns: 3.4rem 1fr; } select { min-width:0; width:100%; } }
+</style>
+</head>
+<body>
+<main>
+  <h1>Графіки відключень світла</h1>
+  <p class="muted" id="sub">Дані для застосунку <a href="https://github.com/termit-uanic/wattlo">Wattlo</a>: що збирає <a href="https://github.com/termit-uanic/wattlo-data">wattlo-data</a> із публічних джерел. Неофіційно, може відрізнятися від фактичних відключень.</p>
+
+  <div class="bar">
+    <select id="region" aria-label="Регіон"></select>
+    <input id="filter" type="search" placeholder="Пошук черги" aria-label="Пошук черги" size="12">
+    <span class="muted" id="clock"></span>
+  </div>
+  <div id="status"></div>
+  <div id="sources"></div>
+  <div id="days"></div>
+
+  <footer class="muted">
+    <span style="color:var(--off)">■</span> немає світла · <span style="color:var(--maybe)">■</span> може не бути (перемикання) · <span style="color:var(--on)">■</span> є світло.
+    Час київський. Файли: <a href="v1/index.json">v1/index.json</a>, <code>v1/regions/&lt;регіон&gt;.json</code>; формат і джерела — у
+    <a href="https://github.com/termit-uanic/wattlo-data#readme">README</a>.
+  </footer>
+</main>
+<script>
+(function () {
+  var ZONE = "Europe/Kyiv";
+  var sel = document.getElementById("region"), filter = document.getElementById("filter");
+  var statusEl = document.getElementById("status"), sourcesEl = document.getElementById("sources"), daysEl = document.getElementById("days");
+  var current = null, index = null;
+
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]; }); }
+  function parts(date) {
+    var f = new Intl.DateTimeFormat("en-GB", { timeZone: ZONE, year:"numeric", month:"2-digit", day:"2-digit", hour:"2-digit", minute:"2-digit", hour12:false }).formatToParts(date), o = {};
+    f.forEach(function (p) { o[p.type] = p.value; });
+    return { day: o.year + "-" + o.month + "-" + o.day, hour: +o.hour % 24, minute: +o.minute };
+  }
+  function slotNow() { var p = parts(new Date()); return { day: p.day, slot: p.hour * 2 + (p.minute >= 30 ? 1 : 0), frac: (p.hour * 60 + p.minute) / 1440 }; }
+  function clock(slot) { var h = Math.floor(slot / 2), m = slot % 2 ? "30" : "00"; return (h < 10 ? "0" : "") + h + ":" + m; }
+  function ranges(s) {
+    var out = [], i = 0;
+    while (i < 48) {
+      if (s[i] === "0") { i++; continue; }
+      var j = i; while (j < 48 && s[j] !== "0") j++;
+      out.push(clock(i) + "–" + (j === 48 ? "24:00" : clock(j)) + (s.slice(i, j).indexOf("2") >= 0 && s.slice(i, j).indexOf("1") < 0 ? " (?)" : ""));
+      i = j;
+    }
+    return out;
+  }
+  function ago(iso) {
+    var min = Math.max(0, Math.round((Date.now() - new Date(iso).getTime()) / 60000));
+    if (min < 1) return "щойно"; if (min < 60) return min + " хв тому";
+    var h = Math.floor(min / 60); return h + " год " + (min % 60) + " хв тому";
+  }
+
+  function render() {
+    if (!current) return;
+    var d = current, now = slotNow(), q = filter.value.trim();
+    var minutes = (Date.now() - new Date(d.checkedAt || d.updatedAt).getTime()) / 60000;
+    var stale = minutes > 25;
+    statusEl.innerHTML = '<div class="note' + (stale ? " warn" : "") + '">' +
+      "Перевірено " + esc(ago(d.checkedAt)) + ", графік змінився " + esc(ago(d.updatedAt)) +
+      (stale ? ". <b>Збирач давно не оновлював дані.</b>" : "") +
+      (d.source ? "" : ". <b>Жодне джерело не дало графіка: показано останній відомий.</b>") + "</div>";
+    sourcesEl.innerHTML = '<div class="chips">' + (d.sources || []).map(function (s) {
+      var t = s.name + (s.ok ? "" : " — " + (s.error || "помилка")) + (s.agreement != null ? " · збіг " + Math.round(s.agreement * 100) + "%" : "");
+      return '<a class="chip ' + (s.ok ? "ok" : "fail") + (s.id === d.source ? " used" : "") + '" href="' + esc(s.url) + '" title="' + esc(t) + '">' + esc(t) + (s.id === d.source ? " ✓" : "") + "</a>";
+    }).join("") + "</div>";
+    var html = "", dates = Object.keys(d.days || {});
+    if (!dates.length) html = '<p class="muted">Немає даних.</p>';
+    dates.forEach(function (day) {
+      var label = day === now.day ? "Сьогодні" : "Завтра";
+      var rows = "";
+      d.queues.forEach(function (name) {
+        var s = d.days[day][name];
+        if (!s || (q && name.toLowerCase().indexOf(q.toLowerCase()) < 0)) return;
+        var state = day === now.day ? (s[now.slot] === "1" ? "off" : s[now.slot] === "2" ? "maybe" : "") : "";
+        var cells = "";
+        for (var i = 0; i < 48; i++) cells += "<span" + (s[i] === "1" ? ' class="o"' : s[i] === "2" ? ' class="m"' : "") + "></span>";
+        var r = ranges(s);
+        rows += '<div class="q"><i class="' + state + '"></i>' + esc(name) + '</div><div><div class="track"><div class="cells" role="img" aria-label="' +
+          esc(name + ": " + (r.length ? r.join(", ") : "без відключень")) + '">' + cells + "</div>" +
+          (day === now.day ? '<div class="now" style="left:' + (now.frac * 100).toFixed(2) + '%"></div>' : "") +
+          '</div><div class="ranges">' + (r.length ? esc(r.join(" · ")) : "без відключень") + "</div></div>";
+      });
+      var ticks = ""; for (var h = 0; h < 24; h += 3) ticks += "<span>" + (h < 10 ? "0" : "") + h + "</span>";
+      html += "<h2>" + label + ' <span class="muted">' + esc(day) + '</span></h2><div class="head"><span></span><div class="ticks">' + ticks + '</div></div><div class="rows">' + (rows || '<span></span><span class="muted">Нічого не знайдено</span>') + "</div>";
+    });
+    daysEl.innerHTML = html;
+  }
+
+  function load(slug) {
+    statusEl.innerHTML = '<p class="muted">Завантаження…</p>';
+    fetch("v1/regions/" + slug + ".json", { cache: "no-cache" }).then(function (r) { return r.json(); }).then(function (d) {
+      current = d; render();
+      try { history.replaceState(null, "", "#" + slug); } catch (e) {}
+    }).catch(function (e) { statusEl.innerHTML = '<div class="note warn">Не вдалося завантажити: ' + esc(e) + "</div>"; });
+  }
+
+  fetch("v1/index.json", { cache: "no-cache" }).then(function (r) { return r.json(); }).then(function (i) {
+    index = i;
+    sel.innerHTML = i.regions.map(function (r) { return '<option value="' + esc(r.region) + '">' + esc(r.name.uk) + "</option>"; }).join("");
+    var want = (location.hash || "").slice(1);
+    sel.value = i.regions.some(function (r) { return r.region === want; }) ? want : "kyiv";
+    load(sel.value);
+  }).catch(function (e) { statusEl.innerHTML = '<div class="note warn">Не вдалося завантажити список регіонів: ' + esc(e) + "</div>"; });
+
+  sel.addEventListener("change", function () { load(sel.value); });
+  window.addEventListener("hashchange", function () {
+    var want = (location.hash || "").slice(1);
+    if (index && want && want !== sel.value && index.regions.some(function (r) { return r.region === want; })) { sel.value = want; load(want); }
+  });
+  filter.addEventListener("input", render);
+  setInterval(function () { render(); document.getElementById("clock").textContent = "Київ: " + (function () { var p = parts(new Date()); return (p.hour < 10 ? "0" : "") + p.hour + ":" + (p.minute < 10 ? "0" : "") + p.minute; })(); }, 15000);
+  document.getElementById("clock").textContent = "Київ: " + (function () { var p = parts(new Date()); return (p.hour < 10 ? "0" : "") + p.hour + ":" + (p.minute < 10 ? "0" : "") + p.minute; })();
+})();
+</script>
+</body>
+</html>

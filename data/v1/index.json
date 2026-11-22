@@ -1,0 +1,269 @@
+{
+ "version": 1,
+ "regions": [
+  {
+   "region": "poltavska-oblast",
+   "name": {
+    "uk": "Полтавська область",
+    "en": "Poltava region"
+   },
+   "source": "bezsvitla",
+   "updatedAt": "2026-11-22T15:59:18Z",
+   "days": [
+    "2026-11-22"
+   ]
+  },
+  {
+   "region": "kharkivska-oblast",
+   "name": {
+    "uk": "Харківська область",
+    "en": "Kharkiv region"
+   },
+   "source": "bezsvitla",
+   "updatedAt": "2026-11-22T15:59:18Z",
+   "days": [
+    "2026-11-22"
+   ]
+  },
+  {
+   "region": "dnipropetrovska-oblast",
+   "name": {
+    "uk": "Дніпропетровська область",
+    "en": "Dnipropetrovsk region"
+   },
+   "source": "yasno",
+   "updatedAt": "2026-11-22T15:59:18Z",
+   "days": [
+    "2026-11-22"
+   ]
+  },
+  {
+   "region": "odeska-oblast",
+   "name": {
+    "uk": "Одеська область",
+    "en": "Odesa region"
+   },
+   "source": "dtek_data",
+   "updatedAt": "2026-11-22T15:59:18Z",
+   "days": [
+    "2026-11-22"
+   ]
+  },
+  {
+   "region": "kyivska-oblast",
+   "name": {
+    "uk": "Київська область",
+    "en": "Kyiv region"
+   },
+   "source": "dtek_data",
+   "updatedAt": "2026-11-22T15:59:18Z",
+   "days": [
+    "2026-11-22"
+   ]
+  },
+  {
+   "region": "cherkaska-oblast",
+   "name": {
+    "uk": "Черкаська область",
+    "en": "Cherkasy region"
+   },
+   "source": "oe_data",
+   "updatedAt": "2026-11-22T15:59:18Z",
+   "days": [
+    "2026-11-22"
+   ]
+  },
+  {
+   "region": "chernihivska-oblast",
+   "name": {
+    "uk": "Чернігівська область",
+    "en": "Chernihiv region"
+   },
+   "source": "bezsvitla",
+   "updatedAt": "2026-11-22T15:59:18Z",
+   "days": [
+    "2026-11-22"
+   ]
+  },
+  {
+   "region": "chernivetska-oblast",
+   "name": {
+    "uk": "Чернівецька область",
+    "en": "Chernivtsi region"
+   },
+   "source": "bezsvitla",
+   "updatedAt": "2026-11-22T15:59:18Z",
+   "days": [
+    "2026-11-22"
+   ]
+  },
+  {
+   "region": "ivano-frankivska-oblast",
+   "name": {
+    "uk": "Івано-Франківська область",
+    "en": "Ivano-Frankivsk region"
+   },
+   "source": "bezsvitla",
+   "updatedAt": "2026-11-22T15:59:18Z",
+   "days": [
+    "2026-11-22"
+   ]
+  },
+  {
+   "region": "khmelnytska-oblast",
+   "name": {
+    "uk": "Хмельницька область",
+    "en": "Khmelnytskyi region"
+   },
+   "source": "bezsvitla",
+   "updatedAt": "2026-11-22T15:59:18Z",
+   "days": [
+    "2026-11-22"
+   ]
+  },
+  {
+   "region": "kirovohradska-oblast",
+   "name": {
+    "uk": "Кіровоградська область",
+    "en": "Kirovohrad region"
+   },
+   "source": "bezsvitla",
+   "updatedAt": "2026-11-22T15:59:18Z",
+   "days": [
+    "2026-11-22"
+   ]
+  },
+  {
+   "region": "lvivska-oblast",
+   "name": {
+    "uk": "Львівська область",
+    "en": "Lviv region"
+   },
+   "source": "bezsvitla",
+   "updatedAt": "2026-11-22T16:24:42Z",
+   "days": [
+    "2026-11-22"
+   ]
+  },
+  {
+   "region": "mykolaivska-oblast",
+   "name": {
+    "uk": "Миколаївська область",
+    "en": "Mykolaiv region"
+   },
+   "source": "bezsvitla",
+   "updatedAt": "2026-11-22T15:59:18Z",
+   "days": [
+    "2026-11-22"
+   ]
+  },
+  {
+   "region": "rivnenska-oblast",
+   "name": {
+    "uk": "Рівненська область",
+    "en": "Rivne region"
+   },
+   "source": "bezsvitla",
+   "updatedAt": "2026-11-22T15:59:18Z",
+   "days": [
+    "2026-11-22"
+   ]
+  },
+  {
+   "region": "sumska-oblast",
+   "name": {
+    "uk": "Сумська область",
+    "en": "Sumy region"
+   },
+   "source": "bezsvitla",
+   "updatedAt": "2026-11-22T15:59:18Z",
+   "days": [
+    "2026-11-22"
+   ]
+  },
+  {
+   "region": "ternopilska-oblast",
+   "name": {
+    "uk": "Тернопільська область",
+    "en": "Ternopil region"
+   },
+   "source": "bezsvitla",
+   "updatedAt": "2026-11-22T15:59:18Z",
+   "days": [
+    "2026-11-22"
+   ]
+  },
+  {
+   "region": "vinnytska-oblast",
+   "name": {
+    "uk": "Вінницька область",
+    "en": "Vinnytsia region"
+   },
+   "source": "bezsvitla",
+   "updatedAt": "2026-11-22T15:59:18Z",
+   "days": [
+    "2026-11-22"
+   ]
+  },
+  {
+   "region": "volynska-oblast",
+   "name": {
+    "uk": "Волинська область",
+    "en": "Volyn region"
+   },
+   "source": "bezsvitla",
+   "updatedAt": "2026-11-22T17:04:03Z",
+   "days": [
+    "2026-11-22"
+   ]
+  },
+  {
+   "region": "zakarpatska-oblast",
+   "name": {
+    "uk": "Закарпатська область",
+    "en": "Zakarpattia region"
+   },
+   "source": "bezsvitla",
+   "updatedAt": "2026-11-22T15:59:18Z",
+   "days": [
+    "2026-11-22"
+   ]
+  },
+  {
+   "region": "zaporizka-oblast",
+   "name": {
+    "uk": "Запорізька область",
+    "en": "Zaporizhzhia region"
+   },
+   "source": "bezsvitla",
+   "updatedAt": "2026-11-22T15:59:18Z",
+   "days": [
+    "2026-11-22"
+   ]
+  },
+  {
+   "region": "zhytomyrska-oblast",
+   "name": {
+    "uk": "Житомирська область",
+    "en": "Zhytomyr region"
+   },
+   "source": "bezsvitla",
+   "updatedAt": "2026-11-22T15:59:18Z",
+   "days": [
+    "2026-11-22"
+   ]
+  },
+  {
+   "region": "kyiv",
+   "name": {
+    "uk": "Київ",
+    "en": "Kyiv city"
+   },
+   "source": "yasno",
+   "updatedAt": "2026-11-22T15:59:18Z",
+   "days": [
+    "2026-11-22"
+   ]
+  }
+ ]
+}
