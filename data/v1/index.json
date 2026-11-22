@@ -45,9 +45,10 @@
     "en": "Odesa region"
    },
    "source": "dtek_data",
-   "updatedAt": "2026-11-22T15:59:18Z",
+   "updatedAt": "2026-11-22T20:14:37Z",
    "days": [
-    "2026-11-22"
+    "2026-11-22",
+    "2026-11-23"
    ]
   },
   {
@@ -228,9 +229,10 @@
     "en": "Zakarpattia region"
    },
    "source": "bezsvitla",
-   "updatedAt": "2026-11-22T15:59:18Z",
+   "updatedAt": "2026-11-22T20:14:37Z",
    "days": [
-    "2026-11-22"
+    "2026-11-22",
+    "2026-11-23"
    ]
   },
   {
