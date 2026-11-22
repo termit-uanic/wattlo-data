@@ -70,29 +70,71 @@ def send(project: str, token: str, body: dict) -> None:
         time.sleep(3)
 
 
-def main(changes_path: str) -> int:
+PENDING_MAX_AGE = 3 * 3600  # an app polls anyway: an older push is not worth sending
+
+
+def load_pending(path):
+    """{"<region>/<queue>": time of the change (unix seconds)} that could not be sent earlier."""
+    try:
+        with open(path, encoding="utf-8") as f:
+            data = json.load(f)
+        return {k: int(v) for k, v in data.items()}
+    except (OSError, ValueError, AttributeError, TypeError):
+        return {}
+
+
+def merge(changes: dict, pending: dict, now: int) -> dict:
+    """The pushes to send now: this run's changes and the earlier ones that failed (not older than PENDING_MAX_AGE)."""
+    todo = {k: t for k, t in pending.items() if now - t <= PENDING_MAX_AGE}
+    for region, queues in changes.items():
+        for queue in queues:
+            todo[f"{region}/{queue}"] = now
+    return todo
+
+
+def save_pending(path, failed: dict) -> None:
+    """Writes what is still unsent, or removes the file when everything went out."""
+    if failed:
+        with open(path, "w", encoding="utf-8") as f:
+            json.dump(failed, f, sort_keys=True, indent=1)
+            f.write("\n")
+    elif os.path.exists(path):
+        os.remove(path)
+
+
+def main(changes_path: str, pending_path: str = None) -> int:
     raw = os.environ.get("FCM_SERVICE_ACCOUNT", "").strip()
     with open(changes_path, encoding="utf-8") as f:
         changes = json.load(f)
     if not raw:
         print("no FCM_SERVICE_ACCOUNT: nothing to send", file=sys.stderr)
         return 0
-    if not changes:
-        print("nothing changed", file=sys.stderr)
+    now = int(time.time())
+    todo = merge(changes, load_pending(pending_path) if pending_path else {}, now)
+    if not todo:
+        print("nothing to send", file=sys.stderr)
         return 0
-    account = json.loads(raw)
     stamp = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
-    token, failed = access_token(account), 0
-    for region, queues in changes.items():
-        for queue in queues:
+    failed = {}
+    try:
+        account = json.loads(raw)
+        token = access_token(account)
+    except Exception as e:  # no token: nothing can be sent now, everything waits for the next run
+        print(f"no access token: {e}", file=sys.stderr)
+        failed = dict(todo)
+    else:
+        for key, changed_at in todo.items():
+            region, queue = key.split("/", 1)
             try:
                 send(account["project_id"], token, message(region, queue, stamp))
             except (RuntimeError, OSError) as e:
-                failed += 1
+                failed[key] = changed_at
                 print(f"{topic(region, queue)}: {e}", file=sys.stderr)
-    print(f"sent {sum(len(q) for q in changes.values()) - failed}, failed {failed}", file=sys.stderr)
+    if pending_path:
+        save_pending(pending_path, failed)
+    print(f"sent {len(todo) - len(failed)}, failed {len(failed)}", file=sys.stderr)
     return 1 if failed else 0
 
 
 if __name__ == "__main__":
-    sys.exit(main(sys.argv[1]))
+    sys.exit(main(*sys.argv[1:3]))

@@ -93,7 +93,21 @@ jobs:
         continue-on-error: true
         env:
           FCM_SERVICE_ACCOUNT: ${{ secrets.FCM_SERVICE_ACCOUNT }}
-        run: python -m collector.push /tmp/changes.json
+        run: python -m collector.push /tmp/changes.json data/pending-push.json
+
+      # What could not be sent waits in the repository for the next run (see collector/push.py)
+      - name: Keep the unsent
+        if: always()
+        continue-on-error: true
+        run: |
+          git add data
+          if git diff --cached --quiet; then
+            echo "nothing to keep"
+          else
+            git commit -m "Unsent pushes $(date -u +%Y-%m-%dT%H:%MZ)"
+            git pull --rebase
+            git push
+          fi
 
       - name: Fail if a region is not served
         if: steps.collect.outcome == 'failure'

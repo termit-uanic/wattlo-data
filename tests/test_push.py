@@ -58,6 +58,35 @@ class Message(unittest.TestCase):
                 send.assert_not_called()
 
 
+class Pending(unittest.TestCase):
+    def test_merge_keeps_recent_failures_and_drops_old_ones(self):
+        now = 100000
+        pending = {"a/1.1": now - 60, "b/2.1": now - push.PENDING_MAX_AGE - 1}
+        todo = push.merge({"c": ["1.2"]}, pending, now)
+        self.assertEqual(sorted(todo), ["a/1.1", "c/1.2"])
+
+    def run_main(self, send_effect, pending=None):
+        with tempfile.TemporaryDirectory() as d:
+            changes, pend = os.path.join(d, "c.json"), os.path.join(d, "p.json")
+            json.dump({"lvivska-oblast": ["1.1"]}, open(changes, "w"))
+            if pending:
+                json.dump(pending, open(pend, "w"))
+            env = {"FCM_SERVICE_ACCOUNT": json.dumps({"project_id": "x"})}
+            with mock.patch.dict(os.environ, env), mock.patch("collector.push.access_token", return_value="t"), \
+                    mock.patch("collector.push.send", side_effect=send_effect) as send:
+                code = push.main(changes, pend)
+            return code, push.load_pending(pend), send.call_count
+
+    def test_a_failed_push_waits_for_the_next_run(self):
+        code, left, _ = self.run_main(RuntimeError("boom"))
+        self.assertEqual(code, 1)
+        self.assertEqual(list(left), ["lvivska-oblast/1.1"])
+
+    def test_a_pending_push_is_sent_and_forgotten(self):
+        code, left, calls = self.run_main(None, pending={"poltavska-oblast/2.1": int(__import__("time").time()) - 60})
+        self.assertEqual((code, left, calls), (0, {}, 2))
+
+
 class Signing(unittest.TestCase):
     def test_the_jwt_signature_verifies(self):
         with tempfile.TemporaryDirectory() as d:
