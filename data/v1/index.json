@@ -199,7 +199,7 @@
     "en": "Ternopil region"
    },
    "source": "bezsvitla",
-   "updatedAt": "2026-11-22T20:35:36Z",
+   "updatedAt": "2026-11-22T21:21:34Z",
    "days": [
     "2026-11-22",
     "2026-11-23"
@@ -250,9 +250,10 @@
     "en": "Zaporizhzhia region"
    },
    "source": "bezsvitla",
-   "updatedAt": "2026-11-22T15:59:18Z",
+   "updatedAt": "2026-11-22T21:21:34Z",
    "days": [
-    "2026-11-22"
+    "2026-11-22",
+    "2026-11-23"
    ]
   },
   {
