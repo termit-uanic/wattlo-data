@@ -31,8 +31,8 @@
    "id": "bezsvitla",
    "name": "bezsvitla.com.ua",
    "url": "https://bezsvitla.com.ua/",
-   "ok": true,
-   "agreement": 1.0
+   "ok": false,
+   "error": "TimeoutError: The read operation timed out"
   }
  ],
  "days": {
