@@ -8,9 +8,8 @@
     "en": "Poltava region"
    },
    "source": "oe_data",
-   "updatedAt": "2026-11-22T21:28:34Z",
+   "updatedAt": "2026-11-22T22:07:34Z",
    "days": [
-    "2026-11-22",
     "2026-11-23"
    ]
   },
@@ -45,9 +44,8 @@
     "en": "Odesa region"
    },
    "source": "dtek_data",
-   "updatedAt": "2026-11-22T20:14:37Z",
+   "updatedAt": "2026-11-22T22:07:34Z",
    "days": [
-    "2026-11-22",
     "2026-11-23"
    ]
   },
@@ -58,9 +56,8 @@
     "en": "Kyiv region"
    },
    "source": "dtek_data",
-   "updatedAt": "2026-11-22T21:28:34Z",
+   "updatedAt": "2026-11-22T22:07:34Z",
    "days": [
-    "2026-11-22",
     "2026-11-23"
    ]
   },
@@ -71,9 +68,8 @@
     "en": "Cherkasy region"
    },
    "source": "oe_data",
-   "updatedAt": "2026-11-22T22:00:34Z",
+   "updatedAt": "2026-11-22T22:07:34Z",
    "days": [
-    "2026-11-22",
     "2026-11-23"
    ]
   },
@@ -83,10 +79,9 @@
     "uk": "Чернігівська область",
     "en": "Chernihiv region"
    },
-   "source": "oe_data",
-   "updatedAt": "2026-11-22T22:00:34Z",
+   "source": "bezsvitla",
+   "updatedAt": "2026-11-22T22:07:34Z",
    "days": [
-    "2026-11-22",
     "2026-11-23"
    ]
   },
@@ -132,10 +127,10 @@
     "uk": "Кіровоградська область",
     "en": "Kirovohrad region"
    },
-   "source": null,
-   "updatedAt": "2026-11-22T21:14:34Z",
+   "source": "bezsvitla",
+   "updatedAt": "2026-11-22T22:07:34Z",
    "days": [
-    "2026-11-22"
+    "2026-11-23"
    ]
   },
   {
@@ -205,10 +200,10 @@
     "en": "Vinnytsia region"
    },
    "source": "voe_data",
-   "updatedAt": "2026-11-22T22:00:34Z",
+   "updatedAt": "2026-11-22T22:07:34Z",
    "days": [
-    "2026-11-22",
-    "2026-11-23"
+    "2026-11-23",
+    "2026-11-24"
    ]
   },
   {
