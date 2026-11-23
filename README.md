@@ -1,5 +1,13 @@
 # wattlo-data
 
+<div align="center">
+
+### 🇺🇦 Glory to Ukraine! Glory to the heroes! / Слава Україні! Героям Слава! 🇺🇦
+
+[![Stand With Ukraine](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/banner2-direct.svg)](https://stand-with-ukraine.pp.ua)
+
+</div>
+
 The schedules of power outages in Ukraine for the [Wattlo](https://github.com/termit-uanic/wattlo) app (an Android phone
 and Wear OS watch app), collected from public sources into one small JSON file per region.
 
