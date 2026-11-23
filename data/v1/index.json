@@ -8,7 +8,7 @@
     "en": "Poltava region"
    },
    "source": "oe_data",
-   "updatedAt": "2026-11-22T22:07:34Z",
+   "updatedAt": "2026-11-23T03:56:36Z",
    "days": [
     "2026-11-23"
    ]
@@ -56,7 +56,7 @@
     "en": "Kyiv region"
    },
    "source": "dtek_data",
-   "updatedAt": "2026-11-22T22:07:34Z",
+   "updatedAt": "2026-11-23T03:56:36Z",
    "days": [
     "2026-11-23"
    ]
@@ -176,7 +176,7 @@
     "en": "Sumy region"
    },
    "source": "bezsvitla",
-   "updatedAt": "2026-11-22T22:00:34Z",
+   "updatedAt": "2026-11-23T03:56:36Z",
    "days": [
     "2026-11-23"
    ]
@@ -188,7 +188,7 @@
     "en": "Ternopil region"
    },
    "source": "bezsvitla",
-   "updatedAt": "2026-11-22T22:00:34Z",
+   "updatedAt": "2026-11-23T03:56:36Z",
    "days": [
     "2026-11-23"
    ]
@@ -200,7 +200,7 @@
     "en": "Vinnytsia region"
    },
    "source": "bezsvitla",
-   "updatedAt": "2026-11-23T03:49:36Z",
+   "updatedAt": "2026-11-23T03:56:36Z",
    "days": [
     "2026-11-23"
    ]
