@@ -17,6 +17,9 @@
   .bar { display:flex; gap:10px; flex-wrap:wrap; align-items:center; margin:14px 0 6px; }
   select, input { font:inherit; color:var(--fg); background:var(--card); border:1px solid var(--line); border-radius:10px; padding:8px 12px; }
   select { min-width:240px; }
+  .auto { display:inline-flex; gap:8px; align-items:center; background:var(--card); border:1px solid var(--line); border-radius:10px; padding:6px 12px; }
+  .auto select { min-width:0; padding:2px 6px; border-radius:6px; }
+  .auto input { padding:0; margin:0; width:1.1rem; height:1.1rem; accent-color:var(--accent); }
   .note { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:10px 14px; margin:10px 0; }
   .warn { border-color:var(--maybe); }
   .chips { display:flex; gap:8px; flex-wrap:wrap; margin:6px 0 0; }
@@ -46,6 +49,12 @@
   <div class="bar">
     <select id="region" aria-label="Регіон"></select>
     <input id="filter" type="search" placeholder="Пошук черги" aria-label="Пошук черги" size="12">
+    <label class="auto" title="Оновлювати дані на сторінці без перезавантаження">
+      <input id="auto" type="checkbox"> Автооновлення
+      <select id="every" aria-label="Інтервал автооновлення">
+        <option value="1">1 хв</option><option value="3">3 хв</option><option value="7" selected>7 хв</option><option value="15">15 хв</option>
+      </select>
+    </label>
     <span class="muted" id="clock"></span>
   </div>
   <div id="status"></div>
@@ -63,7 +72,8 @@
   var ZONE = "Europe/Kyiv";
   var sel = document.getElementById("region"), filter = document.getElementById("filter");
   var statusEl = document.getElementById("status"), sourcesEl = document.getElementById("sources"), daysEl = document.getElementById("days");
-  var current = null, index = null;
+  var autoBox = document.getElementById("auto"), everySel = document.getElementById("every");
+  var current = null, index = null, timer = null, loadedAt = 0, loading = false;
 
   function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]; }); }
   function parts(date) {
@@ -125,13 +135,40 @@
     daysEl.innerHTML = html;
   }
 
-  function load(slug) {
-    statusEl.innerHTML = '<p class="muted">Завантаження…</p>';
+  // silent = background refresh: keep the current view on screen and ignore a failure (the next tick retries)
+  function load(slug, silent) {
+    if (loading) return;
+    loading = true;
+    if (!silent) statusEl.innerHTML = '<p class="muted">Завантаження…</p>';
     fetch("v1/regions/" + slug + ".json", { cache: "no-cache" }).then(function (r) { return r.json(); }).then(function (d) {
-      current = d; render();
+      if (slug !== sel.value) return;
+      current = d; loadedAt = Date.now(); render();
       try { history.replaceState(null, "", "#" + slug); } catch (e) {}
-    }).catch(function (e) { statusEl.innerHTML = '<div class="note warn">Не вдалося завантажити: ' + esc(e) + "</div>"; });
+    }).catch(function (e) {
+      if (!silent) statusEl.innerHTML = '<div class="note warn">Не вдалося завантажити: ' + esc(e) + "</div>";
+    }).then(function () { loading = false; });
   }
+
+  // Auto refresh: the user starts and stops it; the choice is remembered in this browser only.
+  function store(k, v) { try { if (v == null) localStorage.removeItem(k); else localStorage.setItem(k, v); } catch (e) {} }
+  function stored(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
+  function applyAuto() {
+    if (timer) { clearInterval(timer); timer = null; }
+    if (autoBox.checked) timer = setInterval(function () { if (!document.hidden) load(sel.value, true); }, +everySel.value * 60000);
+  }
+  autoBox.addEventListener("change", function () {
+    store("wattlo.auto", autoBox.checked ? "1" : null);
+    applyAuto();
+    if (autoBox.checked) load(sel.value, true);
+  });
+  everySel.addEventListener("change", function () { store("wattlo.every", everySel.value); applyAuto(); });
+  // a background tab does not refresh: catch up as soon as the tab is shown again
+  document.addEventListener("visibilitychange", function () {
+    if (!document.hidden && autoBox.checked && Date.now() - loadedAt > +everySel.value * 60000) load(sel.value, true);
+  });
+  if (stored("wattlo.every") && everySel.querySelector('option[value="' + stored("wattlo.every") + '"]')) everySel.value = stored("wattlo.every");
+  autoBox.checked = stored("wattlo.auto") === "1";
+  applyAuto();
 
   fetch("v1/index.json", { cache: "no-cache" }).then(function (r) { return r.json(); }).then(function (i) {
     index = i;
