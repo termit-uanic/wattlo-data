@@ -81,9 +81,10 @@
     "en": "Chernihiv region"
    },
    "source": "bezsvitla",
-   "updatedAt": "2026-11-23T17:35:35Z",
+   "updatedAt": "2026-11-23T18:35:37Z",
    "days": [
-    "2026-11-23"
+    "2026-11-23",
+    "2026-11-24"
    ]
   },
   {
@@ -192,7 +193,7 @@
     "en": "Ternopil region"
    },
    "source": "bezsvitla",
-   "updatedAt": "2026-11-23T17:00:35Z",
+   "updatedAt": "2026-11-23T18:35:37Z",
    "days": [
     "2026-11-23"
    ]
