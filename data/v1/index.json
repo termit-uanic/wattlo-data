@@ -193,7 +193,7 @@
     "en": "Ternopil region"
    },
    "source": "bezsvitla",
-   "updatedAt": "2026-11-23T18:42:37Z",
+   "updatedAt": "2026-11-23T18:49:44Z",
    "days": [
     "2026-11-23"
    ]
@@ -230,9 +230,10 @@
     "en": "Zakarpattia region"
    },
    "source": "bezsvitla",
-   "updatedAt": "2026-11-22T22:00:34Z",
+   "updatedAt": "2026-11-23T18:49:44Z",
    "days": [
-    "2026-11-23"
+    "2026-11-23",
+    "2026-11-24"
    ]
   },
   {
@@ -266,9 +267,10 @@
     "en": "Kyiv city"
    },
    "source": "yasno",
-   "updatedAt": "2026-11-23T18:07:35Z",
+   "updatedAt": "2026-11-23T18:49:44Z",
    "days": [
-    "2026-11-23"
+    "2026-11-23",
+    "2026-11-24"
    ]
   }
  ]
