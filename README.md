@@ -8,6 +8,8 @@
 
 </div>
 
+---
+
 The schedules of power outages in Ukraine for the [Wattlo](https://github.com/termit-uanic/wattlo) app (an Android phone
 and Wear OS watch app), collected from public sources into one small JSON file per region.
 
