@@ -32,7 +32,7 @@
     "en": "Dnipropetrovsk region"
    },
    "source": "yasno",
-   "updatedAt": "2026-11-23T17:07:38Z",
+   "updatedAt": "2026-11-23T17:35:35Z",
    "days": [
     "2026-11-23"
    ]
@@ -80,7 +80,7 @@
     "en": "Chernihiv region"
    },
    "source": "bezsvitla",
-   "updatedAt": "2026-11-23T09:21:36Z",
+   "updatedAt": "2026-11-23T17:35:35Z",
    "days": [
     "2026-11-23"
    ]
@@ -128,7 +128,7 @@
     "en": "Kirovohrad region"
    },
    "source": "bezsvitla",
-   "updatedAt": "2026-11-23T16:56:36Z",
+   "updatedAt": "2026-11-23T17:35:35Z",
    "days": [
     "2026-11-23"
    ]
@@ -176,9 +176,10 @@
     "en": "Sumy region"
    },
    "source": "bezsvitla",
-   "updatedAt": "2026-11-23T10:42:36Z",
+   "updatedAt": "2026-11-23T17:35:35Z",
    "days": [
-    "2026-11-23"
+    "2026-11-23",
+    "2026-11-24"
    ]
   },
   {
