@@ -199,11 +199,10 @@
     "uk": "Вінницька область",
     "en": "Vinnytsia region"
    },
-   "source": "voe_data",
-   "updatedAt": "2026-11-23T02:28:36Z",
+   "source": "bezsvitla",
+   "updatedAt": "2026-11-23T03:49:36Z",
    "days": [
-    "2026-11-23",
-    "2026-11-24"
+    "2026-11-23"
    ]
   },
   {
