@@ -166,9 +166,10 @@
     "en": "Rivne region"
    },
    "source": "bezsvitla",
-   "updatedAt": "2026-11-22T22:00:34Z",
+   "updatedAt": "2026-11-23T18:28:37Z",
    "days": [
-    "2026-11-23"
+    "2026-11-23",
+    "2026-11-24"
    ]
   },
   {
@@ -216,7 +217,7 @@
     "en": "Volyn region"
    },
    "source": "bezsvitla",
-   "updatedAt": "2026-11-23T16:42:36Z",
+   "updatedAt": "2026-11-23T18:28:37Z",
    "days": [
     "2026-11-23"
    ]
