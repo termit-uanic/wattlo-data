@@ -8,7 +8,7 @@
     "en": "Poltava region"
    },
    "source": "oe_data",
-   "updatedAt": "2026-11-24T17:49:36Z",
+   "updatedAt": "2026-11-24T18:42:36Z",
    "days": [
     "2026-11-24",
     "2026-11-25"
@@ -117,9 +117,10 @@
     "en": "Khmelnytskyi region"
    },
    "source": "bezsvitla",
-   "updatedAt": "2026-11-24T18:14:37Z",
+   "updatedAt": "2026-11-24T18:42:36Z",
    "days": [
-    "2026-11-24"
+    "2026-11-24",
+    "2026-11-25"
    ]
   },
   {
@@ -154,9 +155,10 @@
     "en": "Mykolaiv region"
    },
    "source": "bezsvitla",
-   "updatedAt": "2026-11-24T18:07:36Z",
+   "updatedAt": "2026-11-24T18:42:36Z",
    "days": [
-    "2026-11-24"
+    "2026-11-24",
+    "2026-11-25"
    ]
   },
   {
@@ -215,7 +217,7 @@
     "en": "Volyn region"
    },
    "source": "bezsvitla",
-   "updatedAt": "2026-11-24T18:35:37Z",
+   "updatedAt": "2026-11-24T18:42:36Z",
    "days": [
     "2026-11-24"
    ]
