@@ -7,8 +7,8 @@
     "uk": "Полтавська область",
     "en": "Poltava region"
    },
-   "source": "bezsvitla",
-   "updatedAt": "2026-11-24T22:07:38Z",
+   "source": "oe_data",
+   "updatedAt": "2026-11-24T22:14:56Z",
    "days": [
     "2026-11-25"
    ]
@@ -176,7 +176,7 @@
     "en": "Sumy region"
    },
    "source": "bezsvitla",
-   "updatedAt": "2026-11-24T22:00:47Z",
+   "updatedAt": "2026-11-24T22:14:56Z",
    "days": [
     "2026-11-25"
    ]
