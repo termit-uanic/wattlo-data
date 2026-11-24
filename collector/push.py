@@ -15,7 +15,7 @@ import urllib.parse
 import urllib.request
 
 SCOPE = "https://www.googleapis.com/auth/firebase.messaging"
-TTL = "1800s"  # a push that could not be delivered for half an hour is not worth delivering
+TTL = "7200s"  # a watch in Doze takes a push at its next maintenance window, which can be an hour or more away
 
 
 def topic(region: str, queue: str) -> str:
