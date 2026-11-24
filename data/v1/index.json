@@ -45,7 +45,7 @@
     "en": "Odesa region"
    },
    "source": "dtek_data",
-   "updatedAt": "2026-11-24T17:21:39Z",
+   "updatedAt": "2026-11-24T18:56:37Z",
    "days": [
     "2026-11-24"
    ]
@@ -168,9 +168,10 @@
     "en": "Rivne region"
    },
    "source": "bezsvitla",
-   "updatedAt": "2026-11-24T17:49:36Z",
+   "updatedAt": "2026-11-24T18:56:37Z",
    "days": [
-    "2026-11-24"
+    "2026-11-24",
+    "2026-11-25"
    ]
   },
   {
