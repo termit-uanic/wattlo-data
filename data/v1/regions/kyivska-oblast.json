@@ -32,12 +32,12 @@
    "name": "bezsvitla.com.ua",
    "url": "https://bezsvitla.com.ua/",
    "ok": true,
-   "agreement": 0.917
+   "agreement": 1.0
   }
  ],
  "days": {
   "2026-11-26": {
-   "1.1": "111100000000000000001111111110000000000001111111",
+   "1.1": "100000000000000000001111111110000000000001111111",
    "1.2": "000000000000000000001111111110000000000001111111",
    "2.1": "111100000000000000000011111111111110000000011111",
    "2.2": "111100000000000000000011111111111110000000000000",
@@ -51,6 +51,6 @@
    "6.2": "000000000000001111111000000000001111111111000000"
   }
  },
- "updatedAt": "2026-11-25T22:07:35Z",
+ "updatedAt": "2026-11-25T22:35:34Z",
  "attribution": "Schedules are collected from public sources (listed in 'sources'); the operators publish the official ones. Wattlo is not an official service."
 }
