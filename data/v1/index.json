@@ -83,8 +83,8 @@
     "uk": "Чернігівська область",
     "en": "Chernihiv region"
    },
-   "source": "bezsvitla",
-   "updatedAt": "2026-11-25T20:49:34Z",
+   "source": "oe_data",
+   "updatedAt": "2026-11-25T21:21:39Z",
    "days": [
     "2026-11-25",
     "2026-11-26"
@@ -110,7 +110,7 @@
     "en": "Ivano-Frankivsk region"
    },
    "source": "bezsvitla",
-   "updatedAt": "2026-11-25T20:21:35Z",
+   "updatedAt": "2026-11-25T21:21:39Z",
    "days": [
     "2026-11-25",
     "2026-11-26"
@@ -160,7 +160,7 @@
     "uk": "Миколаївська область",
     "en": "Mykolaiv region"
    },
-   "source": "bezsvitla",
+   "source": null,
    "updatedAt": "2026-11-25T20:56:36Z",
    "days": [
     "2026-11-25",
@@ -213,9 +213,10 @@
     "en": "Vinnytsia region"
    },
    "source": "bezsvitla",
-   "updatedAt": "2026-11-25T16:49:37Z",
+   "updatedAt": "2026-11-25T21:21:39Z",
    "days": [
-    "2026-11-25"
+    "2026-11-25",
+    "2026-11-26"
    ]
   },
   {
