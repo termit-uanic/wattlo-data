@@ -33,10 +33,9 @@
     "en": "Dnipropetrovsk region"
    },
    "source": "yasno",
-   "updatedAt": "2026-11-25T20:49:34Z",
+   "updatedAt": "2026-11-25T21:14:35Z",
    "days": [
-    "2026-11-25",
-    "2026-11-26"
+    "2026-11-25"
    ]
   },
   {
@@ -46,9 +45,10 @@
     "en": "Odesa region"
    },
    "source": "dtek_data",
-   "updatedAt": "2026-11-25T20:07:39Z",
+   "updatedAt": "2026-11-25T21:14:35Z",
    "days": [
-    "2026-11-25"
+    "2026-11-25",
+    "2026-11-26"
    ]
   },
   {
