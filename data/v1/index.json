@@ -171,9 +171,10 @@
     "en": "Rivne region"
    },
    "source": "bezsvitla",
-   "updatedAt": "2026-11-25T18:00:36Z",
+   "updatedAt": "2026-11-25T20:42:35Z",
    "days": [
-    "2026-11-25"
+    "2026-11-25",
+    "2026-11-26"
    ]
   },
   {
@@ -246,7 +247,7 @@
     "en": "Zaporizhzhia region"
    },
    "source": "bezsvitla",
-   "updatedAt": "2026-11-25T20:28:46Z",
+   "updatedAt": "2026-11-25T20:42:35Z",
    "days": [
     "2026-11-25",
     "2026-11-26"
