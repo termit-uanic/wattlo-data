@@ -32,7 +32,7 @@
    "name": "OE_OUTAGE_DATA (GitHub)",
    "url": "https://github.com/yaroslav2901/OE_OUTAGE_DATA",
    "ok": true,
-   "agreement": 1.0
+   "agreement": 0.917
   }
  ],
  "days": {
@@ -48,9 +48,9 @@
    "5.1": "000000000000000011111100000000000000000000000000",
    "5.2": "000000000000000011111100000000000000000000000000",
    "6.1": "000000000000000000000000000000000000000011110000",
-   "6.2": "000000000000000000000000000000000000000000001111"
+   "6.2": "000000000000000000000000000000000000000011110000"
   }
  },
- "updatedAt": "2026-11-24T22:00:47Z",
+ "updatedAt": "2026-11-25T18:00:36Z",
  "attribution": "Schedules are collected from public sources (listed in 'sources'); the operators publish the official ones. Wattlo is not an official service."
 }
