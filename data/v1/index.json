@@ -58,7 +58,7 @@
     "en": "Kyiv region"
    },
    "source": "dtek_data",
-   "updatedAt": "2026-11-25T20:28:46Z",
+   "updatedAt": "2026-11-25T20:56:36Z",
    "days": [
     "2026-11-25",
     "2026-11-26"
@@ -161,9 +161,10 @@
     "en": "Mykolaiv region"
    },
    "source": "bezsvitla",
-   "updatedAt": "2026-11-24T22:07:38Z",
+   "updatedAt": "2026-11-25T20:56:36Z",
    "days": [
-    "2026-11-25"
+    "2026-11-25",
+    "2026-11-26"
    ]
   },
   {
@@ -199,9 +200,10 @@
     "en": "Ternopil region"
    },
    "source": "bezsvitla",
-   "updatedAt": "2026-11-25T16:56:47Z",
+   "updatedAt": "2026-11-25T20:56:36Z",
    "days": [
-    "2026-11-25"
+    "2026-11-25",
+    "2026-11-26"
    ]
   },
   {
