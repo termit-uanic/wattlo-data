@@ -57,9 +57,10 @@
     "en": "Kyiv region"
    },
    "source": "dtek_data",
-   "updatedAt": "2026-11-25T19:28:38Z",
+   "updatedAt": "2026-11-25T20:28:46Z",
    "days": [
-    "2026-11-25"
+    "2026-11-25",
+    "2026-11-26"
    ]
   },
   {
@@ -218,9 +219,10 @@
     "en": "Volyn region"
    },
    "source": "bezsvitla",
-   "updatedAt": "2026-11-25T19:56:41Z",
+   "updatedAt": "2026-11-25T20:28:46Z",
    "days": [
-    "2026-11-25"
+    "2026-11-25",
+    "2026-11-26"
    ]
   },
   {
@@ -230,9 +232,10 @@
     "en": "Zakarpattia region"
    },
    "source": "bezsvitla",
-   "updatedAt": "2026-11-25T19:42:36Z",
+   "updatedAt": "2026-11-25T20:28:46Z",
    "days": [
-    "2026-11-25"
+    "2026-11-25",
+    "2026-11-26"
    ]
   },
   {
@@ -242,9 +245,10 @@
     "en": "Zaporizhzhia region"
    },
    "source": "bezsvitla",
-   "updatedAt": "2026-11-25T20:00:37Z",
+   "updatedAt": "2026-11-25T20:28:46Z",
    "days": [
-    "2026-11-25"
+    "2026-11-25",
+    "2026-11-26"
    ]
   },
   {
