@@ -45,7 +45,7 @@
     "en": "Odesa region"
    },
    "source": "dtek_data",
-   "updatedAt": "2026-11-25T21:14:35Z",
+   "updatedAt": "2026-11-25T21:28:36Z",
    "days": [
     "2026-11-25",
     "2026-11-26"
@@ -83,8 +83,8 @@
     "uk": "Чернігівська область",
     "en": "Chernihiv region"
    },
-   "source": "oe_data",
-   "updatedAt": "2026-11-25T21:21:39Z",
+   "source": "bezsvitla",
+   "updatedAt": "2026-11-25T21:28:36Z",
    "days": [
     "2026-11-25",
     "2026-11-26"
@@ -160,7 +160,7 @@
     "uk": "Миколаївська область",
     "en": "Mykolaiv region"
    },
-   "source": null,
+   "source": "bezsvitla",
    "updatedAt": "2026-11-25T20:56:36Z",
    "days": [
     "2026-11-25",
