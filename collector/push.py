@@ -102,6 +102,16 @@ def save_pending(path, failed: dict) -> None:
         os.remove(path)
 
 
+def doc_updated_at(region: str, fallback: str, base: str = "data/v1/regions") -> str:
+    """When the schedule file of the region last changed ("updatedAt" in it). The app compares it with the same time
+    in the file it already has: a push that is not newer than that has nothing to fetch."""
+    try:
+        with open(os.path.join(base, region + ".json"), encoding="utf-8") as f:
+            return json.load(f).get("updatedAt") or fallback
+    except (OSError, ValueError):
+        return fallback
+
+
 def main(changes_path: str, pending_path: str = None) -> int:
     raw = os.environ.get("FCM_SERVICE_ACCOUNT", "").strip()
     with open(changes_path, encoding="utf-8") as f:
@@ -126,7 +136,7 @@ def main(changes_path: str, pending_path: str = None) -> int:
         for key, changed_at in todo.items():
             region, queue = key.split("/", 1)
             try:
-                send(account["project_id"], token, message(region, queue, stamp))
+                send(account["project_id"], token, message(region, queue, doc_updated_at(region, stamp)))
             except (RuntimeError, OSError) as e:
                 failed[key] = changed_at
                 print(f"{topic(region, queue)}: {e}", file=sys.stderr)

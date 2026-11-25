@@ -58,6 +58,21 @@ class Message(unittest.TestCase):
                 send.assert_not_called()
 
 
+class DocTime(unittest.TestCase):
+    def test_the_push_carries_the_time_of_the_file(self):
+        with tempfile.TemporaryDirectory() as d:
+            with open(os.path.join(d, "poltavska-oblast.json"), "w", encoding="utf-8") as f:
+                json.dump({"updatedAt": "2026-11-25T05:28:43Z"}, f)
+            self.assertEqual(push.doc_updated_at("poltavska-oblast", "now", d), "2026-11-25T05:28:43Z")
+
+    def test_without_the_file_the_send_time_is_used(self):
+        with tempfile.TemporaryDirectory() as d:
+            self.assertEqual(push.doc_updated_at("poltavska-oblast", "now", d), "now")
+            with open(os.path.join(d, "x.json"), "w", encoding="utf-8") as f:
+                f.write("{broken")
+            self.assertEqual(push.doc_updated_at("x", "now", d), "now")
+
+
 class Pending(unittest.TestCase):
     def test_merge_keeps_recent_failures_and_drops_old_ones(self):
         now = 100000
