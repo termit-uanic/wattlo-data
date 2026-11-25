@@ -45,7 +45,7 @@
     "en": "Odesa region"
    },
    "source": "dtek_data",
-   "updatedAt": "2026-11-25T16:42:35Z",
+   "updatedAt": "2026-11-25T20:07:39Z",
    "days": [
     "2026-11-25"
    ]
@@ -117,9 +117,10 @@
     "en": "Khmelnytskyi region"
    },
    "source": "bezsvitla",
-   "updatedAt": "2026-11-24T22:00:47Z",
+   "updatedAt": "2026-11-25T20:07:39Z",
    "days": [
-    "2026-11-25"
+    "2026-11-25",
+    "2026-11-26"
    ]
   },
   {
