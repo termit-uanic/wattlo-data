@@ -8,9 +8,8 @@
     "en": "Poltava region"
    },
    "source": "oe_data",
-   "updatedAt": "2026-11-26T21:14:34Z",
+   "updatedAt": "2026-11-26T22:07:41Z",
    "days": [
-    "2026-11-26",
     "2026-11-27"
    ]
   },
@@ -45,9 +44,8 @@
     "en": "Odesa region"
    },
    "source": "dtek_data",
-   "updatedAt": "2026-11-26T20:42:35Z",
+   "updatedAt": "2026-11-26T22:07:41Z",
    "days": [
-    "2026-11-26",
     "2026-11-27"
    ]
   },
@@ -58,9 +56,8 @@
     "en": "Kyiv region"
    },
    "source": "dtek_data",
-   "updatedAt": "2026-11-26T20:14:34Z",
+   "updatedAt": "2026-11-26T22:07:41Z",
    "days": [
-    "2026-11-26",
     "2026-11-27"
    ]
   },
@@ -130,10 +127,10 @@
     "uk": "Кіровоградська область",
     "en": "Kirovohrad region"
    },
-   "source": null,
-   "updatedAt": "2026-11-26T21:42:44Z",
+   "source": "bezsvitla",
+   "updatedAt": "2026-11-26T22:07:41Z",
    "days": [
-    "2026-11-26"
+    "2026-11-27"
    ]
   },
   {
@@ -263,9 +260,8 @@
     "en": "Kyiv city"
    },
    "source": "yasno",
-   "updatedAt": "2026-11-26T20:21:36Z",
+   "updatedAt": "2026-11-26T22:07:41Z",
    "days": [
-    "2026-11-26",
     "2026-11-27"
    ]
   }
