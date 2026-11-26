@@ -21,9 +21,10 @@
     "en": "Kharkiv region"
    },
    "source": "bezsvitla",
-   "updatedAt": "2026-11-26T06:35:36Z",
+   "updatedAt": "2026-11-26T20:49:35Z",
    "days": [
-    "2026-11-26"
+    "2026-11-26",
+    "2026-11-27"
    ]
   },
   {
@@ -84,9 +85,10 @@
     "en": "Chernihiv region"
    },
    "source": "bezsvitla",
-   "updatedAt": "2026-11-25T22:00:37Z",
+   "updatedAt": "2026-11-26T20:49:35Z",
    "days": [
-    "2026-11-26"
+    "2026-11-26",
+    "2026-11-27"
    ]
   },
   {
@@ -237,7 +239,7 @@
     "en": "Zakarpattia region"
    },
    "source": "bezsvitla",
-   "updatedAt": "2026-11-26T20:07:34Z",
+   "updatedAt": "2026-11-26T20:49:35Z",
    "days": [
     "2026-11-26",
     "2026-11-27"
