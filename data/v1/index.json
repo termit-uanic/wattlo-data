@@ -108,9 +108,10 @@
     "en": "Ivano-Frankivsk region"
    },
    "source": "bezsvitla",
-   "updatedAt": "2026-11-26T19:56:35Z",
+   "updatedAt": "2026-11-26T20:21:36Z",
    "days": [
-    "2026-11-26"
+    "2026-11-26",
+    "2026-11-27"
    ]
   },
   {
@@ -197,7 +198,7 @@
     "en": "Ternopil region"
    },
    "source": "bezsvitla",
-   "updatedAt": "2026-11-26T20:14:34Z",
+   "updatedAt": "2026-11-26T20:21:36Z",
    "days": [
     "2026-11-26",
     "2026-11-27"
@@ -273,9 +274,10 @@
     "en": "Kyiv city"
    },
    "source": "yasno",
-   "updatedAt": "2026-11-25T22:00:37Z",
+   "updatedAt": "2026-11-26T20:21:36Z",
    "days": [
-    "2026-11-26"
+    "2026-11-26",
+    "2026-11-27"
    ]
   }
  ]
