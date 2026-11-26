@@ -57,7 +57,7 @@
     "en": "Kyiv region"
    },
    "source": "dtek_data",
-   "updatedAt": "2026-11-26T20:00:35Z",
+   "updatedAt": "2026-11-26T20:14:34Z",
    "days": [
     "2026-11-26",
     "2026-11-27"
@@ -70,9 +70,10 @@
     "en": "Cherkasy region"
    },
    "source": "bezsvitla",
-   "updatedAt": "2026-11-25T22:28:35Z",
+   "updatedAt": "2026-11-26T20:14:34Z",
    "days": [
-    "2026-11-26"
+    "2026-11-26",
+    "2026-11-27"
    ]
   },
   {
@@ -119,9 +120,10 @@
     "en": "Khmelnytskyi region"
    },
    "source": "bezsvitla",
-   "updatedAt": "2026-11-25T22:00:37Z",
+   "updatedAt": "2026-11-26T20:14:34Z",
    "days": [
-    "2026-11-26"
+    "2026-11-26",
+    "2026-11-27"
    ]
   },
   {
@@ -169,9 +171,10 @@
     "en": "Rivne region"
    },
    "source": "bezsvitla",
-   "updatedAt": "2026-11-25T22:00:37Z",
+   "updatedAt": "2026-11-26T20:14:34Z",
    "days": [
-    "2026-11-26"
+    "2026-11-26",
+    "2026-11-27"
    ]
   },
   {
@@ -181,9 +184,10 @@
     "en": "Sumy region"
    },
    "source": "bezsvitla",
-   "updatedAt": "2026-11-26T19:07:35Z",
+   "updatedAt": "2026-11-26T20:14:34Z",
    "days": [
-    "2026-11-26"
+    "2026-11-26",
+    "2026-11-27"
    ]
   },
   {
@@ -193,7 +197,7 @@
     "en": "Ternopil region"
    },
    "source": "bezsvitla",
-   "updatedAt": "2026-11-26T20:07:34Z",
+   "updatedAt": "2026-11-26T20:14:34Z",
    "days": [
     "2026-11-26",
     "2026-11-27"
@@ -243,9 +247,10 @@
     "en": "Zaporizhzhia region"
    },
    "source": "bezsvitla",
-   "updatedAt": "2026-11-26T08:49:35Z",
+   "updatedAt": "2026-11-26T20:14:34Z",
    "days": [
-    "2026-11-26"
+    "2026-11-26",
+    "2026-11-27"
    ]
   },
   {
@@ -255,9 +260,10 @@
     "en": "Zhytomyr region"
    },
    "source": "bezsvitla",
-   "updatedAt": "2026-11-26T14:35:35Z",
+   "updatedAt": "2026-11-26T20:14:34Z",
    "days": [
-    "2026-11-26"
+    "2026-11-26",
+    "2026-11-27"
    ]
   },
   {
