@@ -8,9 +8,10 @@
     "en": "Poltava region"
    },
    "source": "oe_data",
-   "updatedAt": "2026-11-26T19:07:35Z",
+   "updatedAt": "2026-11-26T19:42:36Z",
    "days": [
-    "2026-11-26"
+    "2026-11-26",
+    "2026-11-27"
    ]
   },
   {
@@ -44,7 +45,7 @@
     "en": "Odesa region"
    },
    "source": "dtek_data",
-   "updatedAt": "2026-11-26T16:35:40Z",
+   "updatedAt": "2026-11-26T19:42:36Z",
    "days": [
     "2026-11-26"
    ]
@@ -200,7 +201,7 @@
     "en": "Vinnytsia region"
    },
    "source": "bezsvitla",
-   "updatedAt": "2026-11-26T16:42:36Z",
+   "updatedAt": "2026-11-26T19:42:36Z",
    "days": [
     "2026-11-26"
    ]
