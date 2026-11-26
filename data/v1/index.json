@@ -21,9 +21,8 @@
     "en": "Kharkiv region"
    },
    "source": "bezsvitla",
-   "updatedAt": "2026-11-26T20:49:35Z",
+   "updatedAt": "2026-11-26T22:00:36Z",
    "days": [
-    "2026-11-26",
     "2026-11-27"
    ]
   },
@@ -34,9 +33,8 @@
     "en": "Dnipropetrovsk region"
    },
    "source": "bezsvitla",
-   "updatedAt": "2026-11-26T21:28:37Z",
+   "updatedAt": "2026-11-26T22:00:36Z",
    "days": [
-    "2026-11-26",
     "2026-11-27"
    ]
   },
@@ -73,9 +71,8 @@
     "en": "Cherkasy region"
    },
    "source": "bezsvitla",
-   "updatedAt": "2026-11-26T20:14:34Z",
+   "updatedAt": "2026-11-26T22:00:36Z",
    "days": [
-    "2026-11-26",
     "2026-11-27"
    ]
   },
@@ -86,9 +83,8 @@
     "en": "Chernihiv region"
    },
    "source": "bezsvitla",
-   "updatedAt": "2026-11-26T20:49:35Z",
+   "updatedAt": "2026-11-26T22:00:36Z",
    "days": [
-    "2026-11-26",
     "2026-11-27"
    ]
   },
@@ -99,9 +95,8 @@
     "en": "Chernivtsi region"
    },
    "source": "bezsvitla",
-   "updatedAt": "2026-11-26T20:00:35Z",
+   "updatedAt": "2026-11-26T22:00:36Z",
    "days": [
-    "2026-11-26",
     "2026-11-27"
    ]
   },
@@ -112,9 +107,8 @@
     "en": "Ivano-Frankivsk region"
    },
    "source": "bezsvitla",
-   "updatedAt": "2026-11-26T20:21:36Z",
+   "updatedAt": "2026-11-26T22:00:36Z",
    "days": [
-    "2026-11-26",
     "2026-11-27"
    ]
   },
@@ -125,9 +119,8 @@
     "en": "Khmelnytskyi region"
    },
    "source": "bezsvitla",
-   "updatedAt": "2026-11-26T20:14:34Z",
+   "updatedAt": "2026-11-26T22:00:36Z",
    "days": [
-    "2026-11-26",
     "2026-11-27"
    ]
   },
@@ -137,7 +130,7 @@
     "uk": "Кіровоградська область",
     "en": "Kirovohrad region"
    },
-   "source": "bezsvitla",
+   "source": null,
    "updatedAt": "2026-11-26T21:42:44Z",
    "days": [
     "2026-11-26"
@@ -150,9 +143,8 @@
     "en": "Lviv region"
    },
    "source": "bezsvitla",
-   "updatedAt": "2026-11-26T20:07:34Z",
+   "updatedAt": "2026-11-26T22:00:36Z",
    "days": [
-    "2026-11-26",
     "2026-11-27"
    ]
   },
@@ -163,9 +155,8 @@
     "en": "Mykolaiv region"
    },
    "source": "bezsvitla",
-   "updatedAt": "2026-11-26T20:07:34Z",
+   "updatedAt": "2026-11-26T22:00:36Z",
    "days": [
-    "2026-11-26",
     "2026-11-27"
    ]
   },
@@ -176,9 +167,8 @@
     "en": "Rivne region"
    },
    "source": "bezsvitla",
-   "updatedAt": "2026-11-26T20:14:34Z",
+   "updatedAt": "2026-11-26T22:00:36Z",
    "days": [
-    "2026-11-26",
     "2026-11-27"
    ]
   },
@@ -189,9 +179,8 @@
     "en": "Sumy region"
    },
    "source": "bezsvitla",
-   "updatedAt": "2026-11-26T21:07:34Z",
+   "updatedAt": "2026-11-26T22:00:36Z",
    "days": [
-    "2026-11-26",
     "2026-11-27"
    ]
   },
@@ -202,9 +191,8 @@
     "en": "Ternopil region"
    },
    "source": "bezsvitla",
-   "updatedAt": "2026-11-26T20:21:36Z",
+   "updatedAt": "2026-11-26T22:00:36Z",
    "days": [
-    "2026-11-26",
     "2026-11-27"
    ]
   },
@@ -215,9 +203,8 @@
     "en": "Vinnytsia region"
    },
    "source": "bezsvitla",
-   "updatedAt": "2026-11-26T21:35:34Z",
+   "updatedAt": "2026-11-26T22:00:36Z",
    "days": [
-    "2026-11-26",
     "2026-11-27"
    ]
   },
@@ -227,7 +214,7 @@
     "uk": "Волинська область",
     "en": "Volyn region"
    },
-   "source": "bezsvitla",
+   "source": null,
    "updatedAt": "2026-11-26T10:49:36Z",
    "days": [
     "2026-11-26"
@@ -240,9 +227,8 @@
     "en": "Zakarpattia region"
    },
    "source": "bezsvitla",
-   "updatedAt": "2026-11-26T20:49:35Z",
+   "updatedAt": "2026-11-26T22:00:36Z",
    "days": [
-    "2026-11-26",
     "2026-11-27"
    ]
   },
@@ -253,9 +239,8 @@
     "en": "Zaporizhzhia region"
    },
    "source": "bezsvitla",
-   "updatedAt": "2026-11-26T20:14:34Z",
+   "updatedAt": "2026-11-26T22:00:36Z",
    "days": [
-    "2026-11-26",
     "2026-11-27"
    ]
   },
@@ -266,9 +251,8 @@
     "en": "Zhytomyr region"
    },
    "source": "bezsvitla",
-   "updatedAt": "2026-11-26T20:14:34Z",
+   "updatedAt": "2026-11-26T22:00:36Z",
    "days": [
-    "2026-11-26",
     "2026-11-27"
    ]
   },
