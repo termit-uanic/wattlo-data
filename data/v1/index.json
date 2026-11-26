@@ -57,9 +57,10 @@
     "en": "Kyiv region"
    },
    "source": "dtek_data",
-   "updatedAt": "2026-11-26T15:42:36Z",
+   "updatedAt": "2026-11-26T20:00:35Z",
    "days": [
-    "2026-11-26"
+    "2026-11-26",
+    "2026-11-27"
    ]
   },
   {
@@ -93,9 +94,10 @@
     "en": "Chernivtsi region"
    },
    "source": "bezsvitla",
-   "updatedAt": "2026-11-26T16:28:36Z",
+   "updatedAt": "2026-11-26T20:00:35Z",
    "days": [
-    "2026-11-26"
+    "2026-11-26",
+    "2026-11-27"
    ]
   },
   {
