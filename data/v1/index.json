@@ -8,7 +8,7 @@
     "en": "Poltava region"
    },
    "source": "oe_data",
-   "updatedAt": "2026-11-27T17:49:35Z",
+   "updatedAt": "2026-11-27T18:49:34Z",
    "days": [
     "2026-11-27",
     "2026-11-28"
@@ -70,9 +70,10 @@
     "en": "Cherkasy region"
    },
    "source": "bezsvitla",
-   "updatedAt": "2026-11-27T15:07:36Z",
+   "updatedAt": "2026-11-27T18:49:34Z",
    "days": [
-    "2026-11-27"
+    "2026-11-27",
+    "2026-11-28"
    ]
   },
   {
@@ -232,9 +233,10 @@
     "en": "Zakarpattia region"
    },
    "source": "bezsvitla",
-   "updatedAt": "2026-11-26T22:00:36Z",
+   "updatedAt": "2026-11-27T18:49:34Z",
    "days": [
-    "2026-11-27"
+    "2026-11-27",
+    "2026-11-28"
    ]
   },
   {
@@ -269,9 +271,10 @@
     "en": "Kyiv city"
    },
    "source": "yasno",
-   "updatedAt": "2026-11-26T22:49:34Z",
+   "updatedAt": "2026-11-27T18:49:34Z",
    "days": [
-    "2026-11-27"
+    "2026-11-27",
+    "2026-11-28"
    ]
   }
  ]
