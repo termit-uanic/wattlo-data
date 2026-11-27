@@ -163,7 +163,7 @@
     "uk": "Рівненська область",
     "en": "Rivne region"
    },
-   "source": "bezsvitla",
+   "source": "oe_data",
    "updatedAt": "2026-11-26T22:00:36Z",
    "days": [
     "2026-11-27"
@@ -175,7 +175,7 @@
     "uk": "Сумська область",
     "en": "Sumy region"
    },
-   "source": "bezsvitla",
+   "source": null,
    "updatedAt": "2026-11-27T10:28:36Z",
    "days": [
     "2026-11-27"
