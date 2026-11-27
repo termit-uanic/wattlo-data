@@ -19,20 +19,20 @@
   "6.1",
   "6.2"
  ],
- "source": "bezsvitla",
+ "source": "oe_data",
  "sources": [
   {
    "id": "bezsvitla",
    "name": "bezsvitla.com.ua",
    "url": "https://bezsvitla.com.ua/",
-   "ok": true
+   "ok": false,
+   "error": "HTTPError: HTTP Error 502: Bad Gateway"
   },
   {
    "id": "oe_data",
    "name": "OE_OUTAGE_DATA (GitHub)",
    "url": "https://github.com/yaroslav2901/OE_OUTAGE_DATA",
-   "ok": true,
-   "agreement": 1.0
+   "ok": true
   }
  ],
  "days": {

@@ -19,13 +19,14 @@
   "6.1",
   "6.2"
  ],
- "source": "bezsvitla",
+ "source": null,
  "sources": [
   {
    "id": "bezsvitla",
    "name": "bezsvitla.com.ua",
    "url": "https://bezsvitla.com.ua/",
-   "ok": true
+   "ok": false,
+   "error": "TimeoutError: The read operation timed out"
   }
  ],
  "days": {

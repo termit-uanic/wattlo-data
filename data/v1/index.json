@@ -19,7 +19,7 @@
     "uk": "Харківська область",
     "en": "Kharkiv region"
    },
-   "source": "bezsvitla",
+   "source": "oe_data",
    "updatedAt": "2026-11-26T22:00:36Z",
    "days": [
     "2026-11-27"
@@ -31,7 +31,7 @@
     "uk": "Дніпропетровська область",
     "en": "Dnipropetrovsk region"
    },
-   "source": "bezsvitla",
+   "source": null,
    "updatedAt": "2026-11-27T09:21:35Z",
    "days": [
     "2026-11-27"
@@ -67,8 +67,8 @@
     "uk": "Черкаська область",
     "en": "Cherkasy region"
    },
-   "source": "bezsvitla",
-   "updatedAt": "2026-11-27T10:35:36Z",
+   "source": "oe_data",
+   "updatedAt": "2026-11-27T12:28:35Z",
    "days": [
     "2026-11-27"
    ]
@@ -79,7 +79,7 @@
     "uk": "Чернігівська область",
     "en": "Chernihiv region"
    },
-   "source": "bezsvitla",
+   "source": "oe_data",
    "updatedAt": "2026-11-27T10:42:34Z",
    "days": [
     "2026-11-27"
@@ -91,7 +91,7 @@
     "uk": "Чернівецька область",
     "en": "Chernivtsi region"
    },
-   "source": "bezsvitla",
+   "source": null,
    "updatedAt": "2026-11-27T10:28:36Z",
    "days": [
     "2026-11-27"
@@ -103,7 +103,7 @@
     "uk": "Івано-Франківська область",
     "en": "Ivano-Frankivsk region"
    },
-   "source": "bezsvitla",
+   "source": "oe_data",
    "updatedAt": "2026-11-27T10:28:36Z",
    "days": [
     "2026-11-27"
@@ -115,8 +115,8 @@
     "uk": "Хмельницька область",
     "en": "Khmelnytskyi region"
    },
-   "source": "bezsvitla",
-   "updatedAt": "2026-11-26T22:00:36Z",
+   "source": "oe_data",
+   "updatedAt": "2026-11-27T12:28:35Z",
    "days": [
     "2026-11-27"
    ]
@@ -127,7 +127,7 @@
     "uk": "Кіровоградська область",
     "en": "Kirovohrad region"
    },
-   "source": "bezsvitla",
+   "source": null,
    "updatedAt": "2026-11-27T10:28:36Z",
    "days": [
     "2026-11-27"
@@ -139,7 +139,7 @@
     "uk": "Львівська область",
     "en": "Lviv region"
    },
-   "source": "bezsvitla",
+   "source": "oe_data",
    "updatedAt": "2026-11-26T22:00:36Z",
    "days": [
     "2026-11-27"
@@ -151,7 +151,7 @@
     "uk": "Миколаївська область",
     "en": "Mykolaiv region"
    },
-   "source": "bezsvitla",
+   "source": null,
    "updatedAt": "2026-11-27T10:28:36Z",
    "days": [
     "2026-11-27"
@@ -163,7 +163,7 @@
     "uk": "Рівненська область",
     "en": "Rivne region"
    },
-   "source": "bezsvitla",
+   "source": "oe_data",
    "updatedAt": "2026-11-26T22:00:36Z",
    "days": [
     "2026-11-27"
@@ -175,7 +175,7 @@
     "uk": "Сумська область",
     "en": "Sumy region"
    },
-   "source": "bezsvitla",
+   "source": null,
    "updatedAt": "2026-11-27T10:28:36Z",
    "days": [
     "2026-11-27"
@@ -187,7 +187,7 @@
     "uk": "Тернопільська область",
     "en": "Ternopil region"
    },
-   "source": "bezsvitla",
+   "source": null,
    "updatedAt": "2026-11-27T10:42:34Z",
    "days": [
     "2026-11-27"
@@ -199,10 +199,11 @@
     "uk": "Вінницька область",
     "en": "Vinnytsia region"
    },
-   "source": "bezsvitla",
-   "updatedAt": "2026-11-27T10:56:36Z",
+   "source": "voe_data",
+   "updatedAt": "2026-11-27T12:28:35Z",
    "days": [
-    "2026-11-27"
+    "2026-11-27",
+    "2026-11-28"
    ]
   },
   {
@@ -211,7 +212,7 @@
     "uk": "Волинська область",
     "en": "Volyn region"
    },
-   "source": "bezsvitla",
+   "source": null,
    "updatedAt": "2026-11-26T23:00:35Z",
    "days": [
     "2026-11-27"
@@ -223,7 +224,7 @@
     "uk": "Закарпатська область",
     "en": "Zakarpattia region"
    },
-   "source": "bezsvitla",
+   "source": "oe_data",
    "updatedAt": "2026-11-26T22:00:36Z",
    "days": [
     "2026-11-27"
