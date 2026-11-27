@@ -45,9 +45,8 @@
     "en": "Odesa region"
    },
    "source": "dtek_data",
-   "updatedAt": "2026-11-27T19:35:37Z",
+   "updatedAt": "2026-11-27T22:07:40Z",
    "days": [
-    "2026-11-27",
     "2026-11-28"
    ]
   },
@@ -58,9 +57,8 @@
     "en": "Kyiv region"
    },
    "source": "dtek_data",
-   "updatedAt": "2026-11-27T20:14:34Z",
+   "updatedAt": "2026-11-27T22:07:40Z",
    "days": [
-    "2026-11-27",
     "2026-11-28"
    ]
   },
@@ -130,10 +128,10 @@
     "uk": "Кіровоградська область",
     "en": "Kirovohrad region"
    },
-   "source": null,
-   "updatedAt": "2026-11-27T19:49:34Z",
+   "source": "bezsvitla",
+   "updatedAt": "2026-11-27T22:07:40Z",
    "days": [
-    "2026-11-27"
+    "2026-11-28"
    ]
   },
   {
@@ -263,9 +261,8 @@
     "en": "Kyiv city"
    },
    "source": "yasno",
-   "updatedAt": "2026-11-27T18:49:34Z",
+   "updatedAt": "2026-11-27T22:07:40Z",
    "days": [
-    "2026-11-27",
     "2026-11-28"
    ]
   }
