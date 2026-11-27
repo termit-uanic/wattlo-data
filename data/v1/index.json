@@ -182,7 +182,7 @@
     "en": "Sumy region"
    },
    "source": "bezsvitla",
-   "updatedAt": "2026-11-27T17:49:35Z",
+   "updatedAt": "2026-11-27T18:42:35Z",
    "days": [
     "2026-11-27",
     "2026-11-28"
@@ -256,9 +256,10 @@
     "en": "Zhytomyr region"
    },
    "source": "bezsvitla",
-   "updatedAt": "2026-11-27T13:35:35Z",
+   "updatedAt": "2026-11-27T18:42:35Z",
    "days": [
-    "2026-11-27"
+    "2026-11-27",
+    "2026-11-28"
    ]
   },
   {
