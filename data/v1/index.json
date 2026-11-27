@@ -46,9 +46,10 @@
     "en": "Odesa region"
    },
    "source": "dtek_data",
-   "updatedAt": "2026-11-27T17:00:38Z",
+   "updatedAt": "2026-11-27T19:21:36Z",
    "days": [
-    "2026-11-27"
+    "2026-11-27",
+    "2026-11-28"
    ]
   },
   {
@@ -96,7 +97,7 @@
     "en": "Chernivtsi region"
    },
    "source": "bezsvitla",
-   "updatedAt": "2026-11-27T16:49:35Z",
+   "updatedAt": "2026-11-27T19:21:36Z",
    "days": [
     "2026-11-27"
    ]
@@ -108,9 +109,10 @@
     "en": "Ivano-Frankivsk region"
    },
    "source": "bezsvitla",
-   "updatedAt": "2026-11-27T16:56:43Z",
+   "updatedAt": "2026-11-27T19:21:36Z",
    "days": [
-    "2026-11-27"
+    "2026-11-27",
+    "2026-11-28"
    ]
   },
   {
@@ -196,7 +198,7 @@
     "en": "Ternopil region"
    },
    "source": "bezsvitla",
-   "updatedAt": "2026-11-27T17:00:38Z",
+   "updatedAt": "2026-11-27T19:21:36Z",
    "days": [
     "2026-11-27"
    ]
