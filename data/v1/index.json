@@ -31,7 +31,7 @@
     "uk": "Дніпропетровська область",
     "en": "Dnipropetrovsk region"
    },
-   "source": "bezsvitla",
+   "source": null,
    "updatedAt": "2026-11-27T22:00:34Z",
    "days": [
     "2026-11-28"
@@ -67,7 +67,7 @@
     "uk": "Черкаська область",
     "en": "Cherkasy region"
    },
-   "source": "bezsvitla",
+   "source": "oe_data",
    "updatedAt": "2026-11-27T22:00:34Z",
    "days": [
     "2026-11-28"
@@ -79,7 +79,7 @@
     "uk": "Чернігівська область",
     "en": "Chernihiv region"
    },
-   "source": "bezsvitla",
+   "source": "oe_data",
    "updatedAt": "2026-11-27T22:00:34Z",
    "days": [
     "2026-11-28"
